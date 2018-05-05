@@ -70,7 +70,7 @@ void EvaluatePostfix()
 	
 	while(token)
 	{
-		if(isDigit(token[0]))
+		if(isdigit(token[0]))
 		{
 			sscanf(token,"%d",&no);
 			printf("no=%d\n",no);
