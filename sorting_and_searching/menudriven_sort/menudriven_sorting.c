@@ -1,3 +1,4 @@
+#include "sort.h"
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -276,12 +277,12 @@ void simulateOperation()
 				scanf("%d",&array[i]);
 			}
 			
-			quicksort(array,lb,ub);
+			quicksort(array,0,size-1);
 			
 			printf("QUICK SORT ELEMENTS:\n\n");
 			for(int i=0 ; i<size ; i++)
 			{
-				printf("%d",array[i]);
+				printf("%d ",array[i]);
 			}
 			printf("\n");
 			
