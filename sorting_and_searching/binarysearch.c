@@ -21,13 +21,13 @@ int binary_search(int * array, int ele, int lb, int ub)
 			}
 			else if(array[mid] > ele)
 			{
-				ub = mid-1;
+				ub = mid;
 			}
 			else
 			{
 				lb = mid+1;
 			}
-			printf("\n%d%d",lb,ub);
+			printf("\n lb = %d , ub = %d",lb,ub);
 		}
 	}
 	return retVal;
