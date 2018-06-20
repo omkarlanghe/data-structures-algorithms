@@ -72,7 +72,33 @@ TREENODE_T *insert(TREENODE_T *root, int data)
 }
 _Bool search(TREENODE_T *root, int data)
 {
+	int flag = 0;
+
+	if(root == NULL)
+	{
+		return;
+	}
 	
+	if(root->left == NULL && root->right == NULL)
+	{
+		return 1;
+	} 
+	
+	if(root->left)
+	{
+		if(data == root->data)
+		{
+			flag = 1;
+		}
+	}
+	if(root->right)
+	{
+		if(data == root->data)
+		{
+			flag = 1;
+		}
+	}
+	return flag;
 }
 void preorder(TREENODE_T *root)
 {
@@ -179,7 +205,7 @@ int countnonleafNodes(TREENODE_T *root)
 	
 	if(root->right == NULL)
 	{
-		return 1 + countnonleafNodes(root->right);
+		return 1 + countnonleafNodes(root->left);
 	}
 	
 	return 1 + countnonleafNodes(root->left) + countnonleafNodes(root->right);
@@ -204,7 +230,7 @@ _Bool isBalancedTree(TREENODE_T *root)
 {
 	if(root)
 	{
-		if(countDepth(root->left) - countDepth(root->right) < 2)
+		if(abs(countDepth(root->left) - countDepth(root->right)) < 2)
 		{
 			return true;
 		}
@@ -218,7 +244,7 @@ _Bool isBalancedTree(TREENODE_T *root)
 
 int main()
 {
-	int noOfnodes;
+	int noOfnodes,data;
 	TREENODE_T *root = NULL;
 	
 	printf("Enter the number of nodes you want to create in a tree:\n");
@@ -256,6 +282,18 @@ int main()
 	else
 	{
 		printf("Tree is not balanced\n");
+	}
+	
+	printf("Enter the element to be searched in a tree:\n");
+	scanf("%d",&data);
+	
+	if(search(root,data) == 1)
+	{
+		printf("Element found in a tree:\n");
+	}
+	else
+	{
+		printf("Element no found in a tree:\n");
 	}
 	
 	freeAllnodes(root);
