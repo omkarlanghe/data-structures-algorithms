@@ -38,7 +38,7 @@ void insert(NODE_T **dhead, const int position, const int data)
 			if(*dhead != NULL)
 			{
 				temp->next = *dhead;
-				temp->next->prev = temp
+				temp->next->prev = temp;
 			}
 			*dhead = temp;
 		}
@@ -152,11 +152,11 @@ void reverseDisplay(NODE_T *head)
 		NODE_T *traverse = head;
 		while(traverse->next)
 		{
-			traverse = traverse->next
+			traverse = traverse->next;
 		}
 		while(traverse)
 		{
-			printf("%d-->",traverse-data);
+			printf("%d-->",traverse->data);
 			traverse = traverse->prev;
 		}
 	}
@@ -167,7 +167,7 @@ void freeLL(NODE_T **head)
 	printf("\n Entry:%s\n",__FUNCTION__);
 	while(head && *head)
 	{
-		delete(head,1);
+		_delete(head,1);
 	}
 	printf("\n Exit:%s\n",__FUNCTION__);	
 }
