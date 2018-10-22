@@ -1,1 +1,2 @@
-# data-structures
+# DATA-STRUCTURES
+# 1.Stack
