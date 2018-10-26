@@ -15,4 +15,4 @@
     2.BubbleSort
     3.InsertionSort
     4.MergeSort
-    6.QuickSort
+    5.QuickSort
