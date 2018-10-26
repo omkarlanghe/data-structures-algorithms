@@ -19,4 +19,5 @@
 # 6.Binary Search
 # 7.Graphs
     1.Indegree & Outdegree
-    2.Adjecency Matrix
+    2.Breadth First Search
+    3.Depth First Search
