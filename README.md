@@ -16,3 +16,7 @@
     3.InsertionSort
     4.MergeSort
     5.QuickSort
+# 6.Binary Search
+# 7.Graphs
+    1.Indegree & Outdegree
+    2.Adjecency Matrix
