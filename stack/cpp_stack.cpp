@@ -10,6 +10,11 @@ class Stack {
 	int arr[MAX];
 
 	Stack() { top = -1; }
+	bool push(int x);
+	int pop();
+	int peep();
+	bool isEmpty();
+	void display();
 };
 
 bool Stack::push (int ele) {
@@ -26,11 +31,13 @@ bool Stack::push (int ele) {
 int Stack::pop () {
 	if(top < 0) {
 		cout << "Stack is empty! Cannot pop" << endl;
-		return (false);
+		return (0);
+	} else {
+		int top = arr[top--];
+		cout << " ==============>>>> " << top << endl;
+		return (top);
+		// return (arr[top--]);
 	}
-	int top = arr[top--];
-	return (top);
-	// return (arr[top--]);
 }
 
 int Stack::peep () {
@@ -48,25 +55,37 @@ bool Stack::isEmpty () {
 }
 
 void Stack::display () {
-	for(int i = 0 ; i < top ; i++) {
-		cout << arr[i] << " ";
+	for(int i = 0 ; i <= top ; i++) {
+		cout << arr[i] << endl;
 	}
 }
 
 int main () {
 	Stack s;
-	int element = 0, limit = 0;
+	// int element = 0, limit = 0;
 	
-	cout << "Enter the total number of elements in stack" << endl;
+	/* cout << "Enter the total number of elements in stack" << endl;
 	cin >> limit;
 
 	for(int i = 0 ; i < limit ; i++) {
 		cout << "Enter " << i+1 << "st Element in stack" << endl;
 		cin >> element;
 		s.push(element);
-	}
+		cout << "-------------" << endl;
+	} */
 
-	cout << "Stack elements :: " << endl;
-	s.display();
+	s.push(10);
+    	s.push(20);
+    	s.push(30);
+    	cout << s.pop() << " Popped from stack\n";
+
+
+	//cout << "Stack elements :: " << endl;
+	//s.display();
+
+	//cout << "Poped element is " << s.pop() << endl;
+	//cout << "Stack elements ::" << endl;
+	//s.display();
+
 	return (0);
 }
